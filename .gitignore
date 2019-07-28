@@ -105,3 +105,6 @@ venv.bak/
 
 # IDE
 .idea
+
+# tensorboard
+tb_logs

@@ -1,7 +1,7 @@
 import numpy as np
 import tensorflow as tf
 
-from network import Network, IMG_SIZE
+from network import Network, Train, IMG_SIZE
 
 if __name__ == '__main__':
 
@@ -14,7 +14,5 @@ if __name__ == '__main__':
 
         input_arr = np.random.rand(1, IMG_SIZE, IMG_SIZE, 3)
 
-        with tf.Session() as sess:
-            sess.run(tf.initializers.global_variables())
-            pred = sess.run(mnist_nn, feed_dict={'input:0': input_arr})
-            print(pred)
+        trainer = Train(mnist_nn)
+        trainer.train()
